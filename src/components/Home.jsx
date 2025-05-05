@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <>
     <Sidenav/>   
-    
     <div className="w-[80%] h-full">
       <Topnav/>
     </div>

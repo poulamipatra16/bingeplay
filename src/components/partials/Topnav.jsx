@@ -1,6 +1,7 @@
 import axios from "../../utils/axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import noimage from "/noimage.png";
 
 const Topnav = () => {
   const [query, setQuery] = useState("");
@@ -38,7 +39,7 @@ const Topnav = () => {
           {searches && searches.map((search, index) => <Link key={search.id} className={`py-3 px-5 w-full flex items-center justify-start gap-5 border-b-1 border-zinc-700 hover:text-zinc-50 hover:bg-[#6556cd] duration-300`}>
           <img
           className="w-12"
-          src={`https://image.tmdb.org/t/p/original/${search.poster_path}`} alt="" />
+          src={`https://image.tmdb.org/t/p/original/${ search.poster_path || search.profile_path || noimage }`} alt="" />
           <span>{search.title || search.name}</span>
           </Link>)}
         

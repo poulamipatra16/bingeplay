@@ -22,7 +22,7 @@ const Topnav = () => {
   return (
     <div className="w-full h-[10vh] relative flex justify-center items-center Topnav px-3 py-10">
      
-        <i class="text-zinc-400 text-2xl ri-search-line"></i>
+        <i className="text-zinc-400 text-2xl ri-search-line"></i>
         <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
@@ -34,7 +34,7 @@ const Topnav = () => {
           </i>}
         </div>
 
-        {searches && <div className={`search-suggestion w-[50%] max-h-[60vh] h-fit bg-[#2c2b36] absolute top-[100%] text-zinc-400 rounded-sm overflow-auto overflow-x-hidden`}>
+        {searches && <div className={`z-10 search-suggestion w-[50%] max-h-[60vh] h-fit bg-[#2c2b36] absolute top-[100%] text-zinc-400 rounded-sm overflow-auto overflow-x-hidden`}>
 
           {searches && searches.map((search, index) => <Link key={search.id} className={`py-3 px-5 w-full flex items-center justify-start gap-5 border-b-1 border-zinc-700 hover:text-zinc-50 hover:bg-[#6556cd] duration-300`}>
           <img

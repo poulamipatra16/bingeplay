@@ -8,19 +8,20 @@ import Dropdown from "./partials/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Cards from "./partials/Cards";
 
-const Popular = () => {
-  document.title = "BingePlay - Popular Movies & Tv Shows";
-    const navigate = useNavigate();
-    const [category, setCategory] = useState("movie");
-    const [popular, setPopular] = useState([]);
-    const [page, setPage] = useState(1);
-    const [hasMore, sethasMore] = useState(true)
+const Tvshows = () => {
 
-     const getPopular = async () => {
+     document.title = "BingePlay - Tv Shows";
+        const navigate = useNavigate();
+        const [category, setCategory] = useState("airing_today");
+        const [tvs, setTvs] = useState([]);
+        const [page, setPage] = useState(1);
+        const [hasMore, sethasMore] = useState(true)
+    
+         const getTvs = async () => {
     try {
-      const { data } = await axios.get(`${category}/popular?page=${page}`);
+      const { data } = await axios.get(`/tv/${category}?page=${page}`);
       if(data.results.length > 0){
-      setPopular((prev) => [...prev, ...data.results]);
+      setTvs((prev) => [...prev, ...data.results]);  
       setPage(prev => prev + 1);
       }else{
         sethasMore(false)
@@ -31,12 +32,12 @@ const Popular = () => {
   };
 
   const refreshHandler = () => {
-    if(popular.length === 0){
-      getPopular();
+    if(tvs.length === 0){
+      getTvs();
     }else{
       setPage(1);
-      setPopular([]);
-      getPopular();
+      setTvs([]);
+      getTvs();
     }
   }
 
@@ -44,7 +45,8 @@ const Popular = () => {
     refreshHandler()
 }, [category]);
 
-  return popular.length > 0 ? (
+  return (
+   tvs.length > 0 ? (
     <div className="w-full h-full bg-[#1f1e24]  h-scroll-none">
 
       <div className="w-full h-fit p-5 flex items-center">
@@ -56,23 +58,23 @@ const Popular = () => {
       </div>
 
      
-      <Header data={popular}/>
+      <Header data={tvs}/>
 
 
       <div className="heading-and-filters flex gap-2 justify-between items-center px-5 mt-10">
-        <h1 className="text-zinc-50 text-4xl font-bold self-start">Popular</h1>
+        <h1 className="text-zinc-50 text-4xl font-bold self-start">tvs</h1>
         <div className="filters flex items-center gap-2">
-        <Dropdown title="Popular" options={["all", "tv", "movie"]} func={(e) => setCategory(e.target.value)}/>
+        <Dropdown title="Tv Shows" options={["on_the_Air", "popular", "top_rated" ,"airing_today"]} func={(e) => setCategory(e.target.value)}/>
         </div>
       </div> 
 
      <div className="w-full h-full">
       <InfiniteScroll 
-      dataLength={popular.length} 
-      next={getPopular} 
+      dataLength={tvs.length} 
+      next={getTvs} 
       hasMore={hasMore} 
       loader={<h1>Loading...</h1>}>
-        <Cards data={popular}/>
+        <Cards data={tvs}/>
       </InfiniteScroll>
       </div>
 
@@ -81,6 +83,7 @@ const Popular = () => {
   ) : (
    <Loading/>
 )
-};
+  )
+}
 
-export default Popular;
+export default Tvshows

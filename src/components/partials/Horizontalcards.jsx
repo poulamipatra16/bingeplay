@@ -12,10 +12,6 @@ const Horizontalcards = ({ data, setcat, heading }) => {
     if (!el) return;
     setShowLeftArrow(el.scrollLeft > 0);
     setShowRightArrow(el.scrollLeft + el.offsetWidth < el.scrollWidth);
-    console.log("1: ",el);
-    console.log("2: ",el.scrollLeft);
-    console.log("3: ",el.offsetWidth);
-    console.log("4: ",el.scrollWidth);
   };
 
   useEffect(() => {

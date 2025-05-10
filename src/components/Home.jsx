@@ -13,7 +13,6 @@ const Home = () => {
     const [trending, setTrending] = useState(null);
     const [category, setCategory] = useState("all");
    
-console.log(category)
 
     const getHeaderbg = async() => {
       try{

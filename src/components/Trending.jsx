@@ -42,8 +42,7 @@ const Trending = () => {
   }
 
   useEffect(()=>{
-    refreshHandler()
-    console.log(trending)
+    refreshHandler();
 }, [category, duration]);
 
   return trending.length > 0 ? (

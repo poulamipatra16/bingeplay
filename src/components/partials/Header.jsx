@@ -52,15 +52,15 @@ const Header = ({ data }) => {
         <div className="media-info flex gap-x-5">
           <span><i className="ri-megaphone-fill text-yellow-500 mr-1"></i>{currentData.release_date || currentData.first_air_date || "No Information"
         }</span>
-        <span><i className="ri-album-fill text-yellow-500 mr-1"></i>{currentData.media_type.toUpperCase()}</span>
+        <span><i className="ri-album-fill text-yellow-500 mr-1"></i>{currentData.media_type && currentData.media_type.toUpperCase()}</span>
         </div>
 
         <div className="btns flex gap-x-3">
         <Link className="bg-[#6556cd] py-4 px-6 rounded text-xl hover:bg-[#8274dd] duration-300">
-        <i class="ri-play-circle-line mr-1"></i>
+        <i className="ri-play-circle-line mr-1"></i>
         <span className="font-semibold">Watch Trailer</span>
         </Link>
-        <Link className="text-[#6556cd] bg-zinc-50 py-3 px-5 rounded text-3xl hover:bg-zinc-300 duration-300"><i class="ri-add-line"></i></Link>
+        <Link className="text-[#6556cd] bg-zinc-50 py-3 px-5 rounded text-3xl hover:bg-zinc-300 duration-300"><i className="ri-add-line"></i></Link>
         </div>
 
       </div>

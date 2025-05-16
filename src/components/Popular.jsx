@@ -72,7 +72,7 @@ const Popular = () => {
       next={getPopular} 
       hasMore={hasMore} 
       loader={<h1>Loading...</h1>}>
-        <Cards data={popular}/>
+        <Cards data={popular} title={category}/>
       </InfiniteScroll>
       </div>
 

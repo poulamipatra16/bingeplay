@@ -57,7 +57,7 @@ const Movie = () => {
       </div>
 
      
-      <Header data={movies}/>
+      <Header data={movies} dataFrom="movie"/>
 
 
       <div className="heading-and-filters flex gap-2 justify-between items-center px-5 mt-10">
@@ -73,7 +73,7 @@ const Movie = () => {
       next={getMovies} 
       hasMore={hasMore} 
       loader={<h1>Loading...</h1>}>
-        <Cards data={movies}/>
+        <Cards data={movies} title="movie"/>
       </InfiniteScroll>
       </div>
 

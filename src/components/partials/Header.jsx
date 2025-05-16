@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ data }) => {
+const Header = ({ data, dataFrom }) => {
   const [changingIndex, setChangingIndex] = useState(0);
 
   //useEffect is saying When this component is ready (or when data changes), do something!
@@ -46,7 +46,7 @@ const Header = ({ data }) => {
               ? currentData.overview.slice(0, 100)
               : currentData.overview}
             ...
-            <Link className="text-blue-400">more</Link>
+            <Link to={`/${currentData.media_type || dataFrom}/details/${currentData.id}`} className="text-blue-400">more</Link>
           </p>
         )}
         <div className="media-info flex gap-x-5">

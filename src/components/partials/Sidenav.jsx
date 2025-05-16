@@ -17,13 +17,13 @@ const Sidenav = () => {
         <NavLink to="/popular" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
           <i className="mr-2 ri-sparkling-2-fill"></i>Popular
           </NavLink>
-          <NavLink to="/movies" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
+          <NavLink to="/movie" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
           <i className="mr-2 ri-movie-2-fill"></i>Movies
           </NavLink>
-          <NavLink to="/tvshows" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
+          <NavLink to="/tv" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
           <i className="mr-2 ri-tv-2-fill"></i>Tv Shows
           </NavLink>
-          <NavLink className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
+          <NavLink to="/people" className={e => {return `${e.isActive &&  "bg-[#6556CD]"}} hover:bg-[#6556CD] hover:text-zinc-50 duration-300 rounded p-3`}}>
           <i className="mr-2 ri-team-fill"></i>People
           </NavLink>
       </div>

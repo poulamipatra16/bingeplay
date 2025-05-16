@@ -43,7 +43,7 @@ const Home = () => {
     <div className="w-[80%] h-[100vh] overflow-y-auto">
       <Topnav/>
       <Header data={headerbg}/>
-      <Horizontalcards data={trending} heading="Trending" setcat={setCategory}/>
+      <Horizontalcards data={trending} heading="Trending" setcat={setCategory} title={category}/>
     </div>
     </>
   ) : (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Topnav from "./partials/Topnav";
 import Dropdown from "./partials/Dropdown";
@@ -74,7 +74,7 @@ const Trending = () => {
       next={getTrending} 
       hasMore={hasMore} 
       loader={<h1>Loading...</h1>}>
-        <Cards data={trending}/>
+        <Cards data={trending} title={category}/>
       </InfiniteScroll>
       </div>
 

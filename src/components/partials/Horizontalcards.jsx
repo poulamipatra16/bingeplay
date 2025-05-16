@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import Dropdown from "./Dropdown";
+import { Link } from "react-router-dom";
 
-const Horizontalcards = ({ data, setcat, heading }) => {
+const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
   const scrollRef = useRef();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
@@ -41,11 +42,11 @@ const Horizontalcards = ({ data, setcat, heading }) => {
     <div className="group w-full h-fit pb-4 px-5">
       <div className="headings text-zinc-50 flex justify-between items-center my-2">
         <h1 className="text-2xl font-semibold text-zinc-50">{heading}</h1>
-        <Dropdown
+        {dropdown===true&& <Dropdown
           title="Filter"
           options={["tv", "movie", "all"]}
           func={(e) => setcat(e.target.value)}
-        />
+        />}
       </div>
 
       <div className="relative">
@@ -75,16 +76,16 @@ const Horizontalcards = ({ data, setcat, heading }) => {
           className="w-full flex items-center overflow-x-auto gap-2  h-scroll-none"
         >
           {data.map((data) => (
-            <div
+            <Link to={`/${data.media_type || title}/details/${data.id}`}
               key={data.id}
-              className="w-[15%] h-[225px] bg-red-400 rounded overflow-hidden shrink-0"
+              className="md:w-[15%] md:h-[250px] rounded overflow-hidden shrink-0"
             >
               <img
                 className="w-full h-full object-cover"
                 src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
                 alt={data.title || "title"}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>

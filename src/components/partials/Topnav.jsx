@@ -30,7 +30,7 @@ const Topnav = () => {
          <div className="cross-holder w-[25px] h-[25px]">
          {query.length > 0 && <i
         onClick={()=> setQuery("")}
-        class="text-zinc-400 ri-close-fill text-xl hover:cursor-pointer hover:text-zinc-50 duration-300">
+        className="text-zinc-400 ri-close-fill text-xl hover:cursor-pointer hover:text-zinc-50 duration-300">
           </i>}
         </div>
 
@@ -39,7 +39,7 @@ const Topnav = () => {
           {searches && searches.map((search, index) => <Link to={`/${search.media_type}/details/${search.id}`} key={search.id} className={`py-3 px-5 w-full flex items-center justify-start gap-5 border-b-1 border-zinc-700 hover:text-zinc-50 hover:bg-[#6556cd] duration-300`}>
           <img
           className="w-12"
-          src={`https://image.tmdb.org/t/p/original/${ search.poster_path || search.profile_path || noimage }`} alt="" />
+          src={search.poster_path || search.profile_path ? `https://image.tmdb.org/t/p/original/${search.poster_path || search.profile_path}`: noimage} alt="" />
           <span>{search.title || search.name}</span>
           </Link>)}
         

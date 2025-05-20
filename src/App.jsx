@@ -12,6 +12,7 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import PeopleDetails from "./components/PeopleDetails";
 import Trailer from "./components/partials/Trailer";
+import NotFound from "./components/partials/NotFound";
 
 
 
@@ -29,9 +30,13 @@ const App = () => {
           <Route path="/movie/details/:id/trailer" element={<Trailer/>}/>
         </Route>
         <Route path="/tv" element={<Tvshows/>}/>
-        <Route path="/tv/details/:id" element={<TvDetails/>}/>
+        <Route path="/tv/details/:id" element={<TvDetails/>}>
+            <Route path="/tv/details/:id/trailer" element={<Trailer/>}/>
+        </Route>
         <Route path="/people" element={<People/>}/>
-        <Route path="/people/details/:id" element={<PeopleDetails/>}/>
+        <Route path="/person/details/:id" element={<PeopleDetails/>}/>
+        {/* Asterics referred as wildcard round which means if wrong url is requested */}
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
 
     </div>

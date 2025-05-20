@@ -56,14 +56,14 @@ const Header = ({ data, dataFrom }) => {
         </div>
 
         <div className="btns flex gap-x-3">
-        <Link className="bg-[#6556cd] py-4 px-6 rounded text-xl hover:bg-[#8274dd] duration-300">
+        <Link to={`/${currentData.media_type}/details/${currentData.id}/trailer`} className="bg-[#6556cd] py-4 px-6 rounded text-xl hover:bg-[#8274dd] duration-300">
         <i className="ri-play-circle-line mr-1"></i>
         <span className="font-semibold">Watch Trailer</span>
         </Link>
         <Link className="text-[#6556cd] bg-zinc-50 py-3 px-5 rounded text-3xl hover:bg-zinc-300 duration-300"><i className="ri-add-line"></i></Link>
         </div>
 
-      </div>
+      </div> 
     
     </div>
   );

@@ -58,7 +58,7 @@ const Tvshows = () => {
       </div>
 
      
-      <Header data={tvs}/>
+      <Header data={tvs} dataFrom="tv"/>
 
 
       <div className="heading-and-filters flex gap-2 justify-between items-center px-5 mt-10">

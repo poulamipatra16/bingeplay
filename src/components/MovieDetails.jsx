@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { asyncloadmovie, removemovie } from "../store/actions/movieActions";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,6 +13,7 @@ const MovieDetails = () => {
   const { info } = useSelector((state) => state.movie);
   const dispatch = useDispatch();
   const { id } = useParams();
+  console.log(info);
 
   useEffect(() => {
     dispatch(asyncloadmovie(id));

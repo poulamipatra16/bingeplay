@@ -38,7 +38,7 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
     scrollRef.current.scrollBy({ left: 1000, behavior: "smooth" });
   };
 
-  return (
+  return data.length > 0 ? (
     <div className="group w-full h-fit pb-4 px-5">
       <div className="headings text-zinc-50 flex justify-between items-center my-2">
         <h1 className="text-2xl font-semibold text-zinc-50">{heading}</h1>
@@ -78,7 +78,7 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
           {data.map((data) => (
             <Link to={`/${data.media_type || title}/details/${data.id}`}
               key={data.id}
-              className="md:w-[15%] md:h-[250px] rounded overflow-hidden shrink-0"
+              className="sm:w-[30%] sm:h-[250px] md:w-[25%] md:h-[250px] lg:w-[15%] lg:[250px] w-[40%] h-[250px] rounded overflow-hidden shrink-0"
             >
               <img
                 className="w-full h-full object-cover"
@@ -90,7 +90,7 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
         </div>
       </div>
     </div>
-  );
+  ) : (<h1>Nothing to Show</h1>)
 };
 
 export default Horizontalcards;

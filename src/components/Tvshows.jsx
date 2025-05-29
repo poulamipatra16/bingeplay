@@ -52,7 +52,7 @@ const Tvshows = () => {
       <div className="w-full h-fit p-5 flex items-center">
         <i
           onClick={() => navigate(-1)}
-          className="text-zinc-400 hover:text-zinc-50 cursor-pointer duration-300 text-2xl ri-arrow-left-line"
+          className="text-[#d4d4d4] hover:text-[#fffffff3] cursor-pointer duration-300 text-2xl ri-arrow-left-line"
         ></i>
          <Topnav />
       </div>
@@ -62,7 +62,7 @@ const Tvshows = () => {
 
 
       <div className="heading-and-filters flex gap-2 justify-between items-center px-5 mt-10">
-        <h1 className="text-zinc-50 text-4xl font-bold self-start">tvs</h1>
+        <h1 className="text-[#fffffff3] text-4xl font-bold self-start">tvs</h1>
         <div className="filters flex items-center gap-2">
         <Dropdown title="Tv Shows" options={["on_the_Air", "popular", "top_rated" ,"airing_today"]} func={(e) => setCategory(e.target.value)}/>
         </div>

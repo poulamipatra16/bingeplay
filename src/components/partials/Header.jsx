@@ -33,7 +33,7 @@ const Header = ({ data, dataFrom }) => {
         }) center/cover`,
       }}
     >
-      <div className="details text-zinc-50 w-fit h-full flex flex-col justify-end items-start gap-3 px-5 py-5">
+      <div className="details text-[#fffffff3] w-fit h-full flex flex-col justify-end items-start gap-3 px-5 py-5">
         <h1 className="font-black text-5xl">
           {currentData.name ||
             currentData.title ||
@@ -60,7 +60,7 @@ const Header = ({ data, dataFrom }) => {
         <i className="ri-play-circle-line mr-1"></i>
         <span className="font-semibold">Watch Trailer</span>
         </Link>
-        <Link className="text-[#6556cd] bg-zinc-50 py-3 px-5 rounded text-3xl hover:bg-zinc-300 duration-300"><i className="ri-add-line"></i></Link>
+        <Link className="text-[#6556cd] bg-[#fffffff3] py-3 px-5 rounded text-3xl hover:bg-[#e7e7e7] duration-300"><i className="ri-add-line"></i></Link>
         </div>
 
       </div> 

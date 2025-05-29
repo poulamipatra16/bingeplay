@@ -31,15 +31,15 @@ const MovieDetails = () => {
         className="bg-[#1f1e24] px-4 lg:px-[10%] pb-10"
       >
         {/* Nav */}
-        <nav className="w-full text-zinc-400 py-5 flex flex-wrap items-center gap-6 text-lg lg:text-xl">
+        <nav className="w-full text-[#d4d4d4] py-5 flex flex-wrap items-center gap-6 text-lg lg:text-xl">
           <Link
             onClick={() => navigate(-1)}
-            className="text-zinc-400 hover:text-zinc-50 cursor-pointer duration-300"
+            className="text-[#d4d4d4] hover:text-[#fffffff3] cursor-pointer duration-300"
           >
             <i className="ri-arrow-left-line" />
           </Link>
           <a href={info.detail.homepage} target="_blank">
-            <i className="ri-external-link-fill hover:text-zinc-50"></i>
+            <i className="ri-external-link-fill hover:text-[#fffffff3]"></i>
           </a>
            {info.detail.wikidata_id !== "undefined" ||
             info.externalid.wikidata_id !== "undefined" && (
@@ -47,13 +47,13 @@ const MovieDetails = () => {
                 href={`https://www.wikidata.org/wiki/${info.detail.wikidata_id || info.externalid.wikidata_id}`}
                 target="_blank"
               >
-                <i className="ri-earth-line hover:text-zinc-50"></i>
+                <i className="ri-earth-line hover:text-[#fffffff3]"></i>
               </a>
             )}
           <a
             href={`https://www.imdb.com/title/${info.detail.imdb_id || info.externalid.imdb_id}`}
             target="_blank"
-            className="underline hover:text-zinc-50"
+            className="underline hover:text-[#fffffff3]"
           >
             <span className="text-sm">imdb</span>
            
@@ -61,13 +61,13 @@ const MovieDetails = () => {
         </nav>
 
         {/* Poster & Details */}
-        <div className="text-zinc-50 relative">
+        <div className="text-[#fffffff3] relative">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
               {info.detail.title || info.detail.original_title || info.detail.name || info.detail.original_name}
             </h1>
 
-            <h2 className="flex flex-wrap gap-2 my-2 text-sm md:text-base text-zinc-400">
+            <h2 className="flex flex-wrap gap-2 my-2 text-sm md:text-base text-[#d4d4d4]">
               <span className="font-semibold">{info.detail.release_date.split("-")[0]}</span>
               <span>&#128900;</span>
               <span className="font-semibold">{info.detail.adult ? "R" : "U/A"}</span>
@@ -89,7 +89,7 @@ const MovieDetails = () => {
                   {info.detail.genres.map((g, i) => (
                     <span
                       key={i}
-                      className="text-xs md:text-base px-3 py-1 rounded-full border border-zinc-400 font-semibold hover:bg-zinc-700 duration-200 cursor-pointer"
+                      className="text-xs md:text-base px-3 py-1 rounded-full border border-[#d4d4d4] font-semibold hover:bg-zinc-700 duration-200 cursor-pointer"
                     >
                       {g.name}
                     </span>

@@ -14,7 +14,7 @@ const Loading = () => {
   return (
     <div className="w-full h-screen bg-[#000] flex justify-center flex-col items-center">
         {count < 20 ? <img src={loader} alt="loader" /> : <img src={server} alt="loader" />}
-        {count >= 20 && <h1 className="text-zinc-50 text-3xl uppercase font-bold">Something went wrong!</h1>}
+        {count >= 20 && <h1 className="text-[#fffffff3] text-3xl uppercase font-bold">Something went wrong!</h1>}
     </div>
   )
 }

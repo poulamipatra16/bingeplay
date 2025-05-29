@@ -17,7 +17,7 @@ const Trailer = () => {
       <ReactPlayer controls={true} muted={true} className="w-full h-full md:w-fit mx-auto rounded" url={`https://www.youtube.com/watch?v=${ytvideo && ytvideo.key}`}/>
       <Link
             onClick={() => navigate(-1)}
-            className="text-zinc-400 hover:text-zinc-50 cursor-pointer duration-300">
+            className="text-[#d4d4d4] hover:text-[#fffffff3] cursor-pointer duration-300">
                <i class="text-2xl ri-close-large-fill"></i>
       </Link>
 

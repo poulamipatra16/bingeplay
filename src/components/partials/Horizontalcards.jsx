@@ -40,8 +40,8 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
 
   return data.length > 0 ? (
     <div className="group w-full h-fit pb-4 px-5">
-      <div className="headings text-zinc-50 flex justify-between items-center my-2">
-        <h1 className="text-2xl font-semibold text-zinc-50">{heading}</h1>
+      <div className="headings text-[#fffffff3] flex justify-between items-center my-2">
+        <h1 className="text-2xl font-semibold text-[#fffffff3]">{heading}</h1>
         {dropdown===true&& <Dropdown
           title="Filter"
           options={["tv", "movie", "all"]}
@@ -55,7 +55,7 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
           <div className="absolute left-0 z-10 h-full w-20 flex items-center justify-start bg-gradient-to-l from-transparent to-[#1f1e24]">
             <i
               onClick={scrollLeft}
-              className="text-zinc-400 hover:text-zinc-50 text-2xl ri-arrow-left-s-line cursor-pointer"
+              className="text-[#d4d4d4] hover:text-[#fffffff3] text-2xl ri-arrow-left-s-line cursor-pointer"
             ></i>
           </div>
         )}
@@ -65,7 +65,7 @@ const Horizontalcards = ({ data, setcat, heading, title, dropdown=true }) => {
           <div className="absolute right-0 z-10 h-full w-20 flex items-center justify-end bg-gradient-to-r from-transparent to-[#1f1e24]">
             <i
               onClick={scrollRight}
-              className="text-zinc-400 hover:text-zinc-50 text-2xl ri-arrow-right-s-line cursor-pointer"
+              className="text-[#d4d4d4] hover:text-[#fffffff3] text-2xl ri-arrow-right-s-line cursor-pointer"
             ></i>
           </div>
         )}

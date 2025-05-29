@@ -51,7 +51,7 @@ const Movie = () => {
       <div className="w-full h-fit p-5 flex items-center">
         <i
           onClick={() => navigate(-1)}
-          className="text-zinc-400 hover:text-zinc-50 cursor-pointer duration-300 text-2xl ri-arrow-left-line"
+          className="text-[#d4d4d4] hover:text-[#fffffff3] cursor-pointer duration-300 text-2xl ri-arrow-left-line"
         ></i>
          <Topnav />
       </div>
@@ -61,7 +61,7 @@ const Movie = () => {
 
 
       <div className="heading-and-filters flex gap-2 justify-between items-center px-5 mt-10">
-        <h1 className="text-zinc-50 text-4xl font-bold self-start">movies</h1>
+        <h1 className="text-[#fffffff3] text-4xl font-bold self-start">movies</h1>
         <div className="filters flex items-center gap-2">
         <Dropdown title="Movies" options={["popular", "top_rated", "upcoming", "now_playing"]} func={(e) => setCategory(e.target.value)}/>
         </div>

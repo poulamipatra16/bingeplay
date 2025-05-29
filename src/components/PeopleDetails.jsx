@@ -23,15 +23,15 @@ const PeopleDetails = () => {
     <div className="w-full h-fit">
       <div className="bg-[#1f1e24] px-4 lg:px-[10%] pb-10">
         {/* Nav */}
-        <nav className="w-full text-zinc-400 py-5 flex flex-wrap items-center gap-6 text-lg lg:text-xl">
+        <nav className="w-full text-[#d4d4d4] py-5 flex flex-wrap items-center gap-6 text-lg lg:text-xl">
           <Link
             onClick={() => navigate(-1)}
-            className="text-zinc-400 hover:text-zinc-50 cursor-pointer duration-300"
+            className="text-[#d4d4d4] hover:text-[#fffffff3] cursor-pointer duration-300"
           >
             <i className="ri-arrow-left-line" />
           </Link>
           <a href={info.detail.homepage} target="_blank">
-            <i className="ri-external-link-fill hover:text-zinc-50"></i>
+            <i className="ri-external-link-fill hover:text-[#fffffff3]"></i>
           </a>
           {info.detail.wikidata_id !== "undefined" ||
             (info.externalid.wikidata_id !== "undefined" && (
@@ -41,7 +41,7 @@ const PeopleDetails = () => {
                 }`}
                 target="_blank"
               >
-                <i className="ri-earth-line hover:text-zinc-50"></i>
+                <i className="ri-earth-line hover:text-[#fffffff3]"></i>
               </a>
             ))}
           <a
@@ -49,14 +49,14 @@ const PeopleDetails = () => {
               info.externalid.imdb_id || info.detail.imdb_id
             }`}
             target="_blank"
-            className="underline hover:text-zinc-50"
+            className="underline hover:text-[#fffffff3]"
           >
             <span className="text-sm">imdb</span>
           </a>
         </nav>
 
         {/* Poster & Details */}
-        <div className="text-zinc-50 relative">
+        <div className="text-[#fffffff3] relative">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
               {info.detail.title ||
@@ -65,7 +65,7 @@ const PeopleDetails = () => {
                 info.detail.original_name}
             </h1>
 
-            <h2 className="flex flex-wrap gap-2 my-2 text-sm md:text-base text-zinc-400">
+            <h2 className="flex flex-wrap gap-2 my-2 text-sm md:text-base text-[#d4d4d4]">
               <span className="font-semibold">
                 {info.detail.known_for_department === "Acting" && "Actor"}
               </span>
@@ -101,7 +101,7 @@ const PeopleDetails = () => {
                 />
 
                 {/* Links */}
-                <div className="links mt-2 text-3xl flex gap-2 text-zinc-400">
+                <div className="links mt-2 text-3xl flex gap-2 text-[#d4d4d4]">
                   <a
                     href={`https://www.facebook.com/${info.externalid.facebook_id}`}
                   >
@@ -142,7 +142,7 @@ const PeopleDetails = () => {
                   )}
                 </div>
 
-                <div className="text-zinc-400">
+                <div className="text-[#d4d4d4]">
                   <span className="font-bold">Place of Birth&nbsp;</span>
                   <span> {info.detail.place_of_birth}</span>
                 </div>
